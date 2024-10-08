@@ -12,6 +12,8 @@ Forked from [JBNRZ/srun-login](https://github.com/JBNRZ/srun-login)
 
 ## 开始使用
 - clone本项目到本地：```git clone https://github.com/HankLiu2020/HDU-AutoLogin.git```
+- 为本项目建立conda环境：```conda create -n iHDU python=3.10```
+- 安装依赖：```pip install -r requirements.txt```
 - 修改目录： 笔者使用的目录是`C:\iHDU-AutoLogin`，请在`login_HDU.bat`中酌情修改
 - 填写上网账号密码：按照`auth.json.example`的样例创建`auth.json`
 - Windows用户请将`iHDU-AutoLogin计划任务.xml`导入到计划任务中。
