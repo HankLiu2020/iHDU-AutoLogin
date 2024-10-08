@@ -189,17 +189,20 @@ def check():
 def main():
     logger.remove()
     logger.add(
-        "srun_login.log", rotation="10 MB", level="DEBUG",
+        "srun_login.log", rotation="200 KB", level="DEBUG",
         format="<g>{time:MM-DD HH:mm:ss}</g> [<lvl>{level}</lvl>] <c><u>srun_login</u></c> | {message}"
     )
     logger.add(
         stdout, level="INFO",
         format="<g>{time:MM-DD HH:mm:ss}</g> [<lvl>{level}</lvl>] <c><u>srun_login</u></c> | {message}"
     )
+
     scheduler = BlockingScheduler()
+    #https://apscheduler.readthedocs.io/en/3.x/modules/schedulers/base.html#apscheduler.schedulers.base.BaseScheduler.add_job
     scheduler.add_job(refresh, 'interval', hours=6)
     scheduler.add_job(check, 'interval', minutes=2)
     logger.info("Process started")
+    check()
     scheduler.start()
 
 
