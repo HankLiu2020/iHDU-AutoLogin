@@ -16,7 +16,7 @@ Forked from [JBNRZ/srun-login](https://github.com/JBNRZ/srun-login)
 - 填写上网账号密码：按照`auth.json.example`的样例创建`auth.json`
 - Windows用户请将`iHDU-AutoLogin计划任务.xml`导入到计划任务中。
 计划任务将会在系统启动时运行`login_HDU.bat`。
-![alt text](image.png)
+![alt text](./image.png)
 
 ## License
 
