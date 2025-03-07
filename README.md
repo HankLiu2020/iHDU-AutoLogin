@@ -1,6 +1,7 @@
 # iHDU-AutoLogin 杭电校园网自动登录脚本
 
 Forked from [JBNRZ/srun-login](https://github.com/JBNRZ/srun-login)
+非常感谢原仓库作者！:)
 
 杭州电子科技大学校园网 Wi-Fi 登录 / 深澜（srun）校园网自动登录脚本
 
