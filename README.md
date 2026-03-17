@@ -21,6 +21,30 @@ Forked from [JBNRZ/srun-login](https://github.com/JBNRZ/srun-login)
 计划任务将会在系统启动时运行`login_HDU.bat`。
 ![alt text](./image.png)
 
+## Linux 使用（systemd 自动登录服务）
+### 1. 创建 systemd 服务文件
+```sudo nano etc/systemd/system/ihdu-login.service```
+```[Unit]
+Description=iHDU Auto Login
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/iHDU-AutoLogin
+ExecStart=/opt/anaconda3/envs/iHDU/bin/python /root/iHDU-AutoLogin/login.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+### 2. 启动服务
+```sudo systemctl enable ihdu-login```
+### 3. 查看状态
+```systemctl status ihdu-login```
+
 ## License
 
 MIT License
